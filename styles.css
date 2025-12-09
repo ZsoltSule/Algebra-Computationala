@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, hsl(220, 30%, 20%), hsl(220, 30%, 25%));
+    color: hsl(0, 0%, 95%);
+}
+h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+    color: hsl(0, 0%, 95%);
+    text-shadow: 1px 1px 3px hsla(0, 0%, 0%, 0.5);
+}
+select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    background-color: hsl(220, 30%, 20%);
+    color: hsl(0, 0%, 95%);
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+select:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px hsla(0, 0%, 0%, 0.7);
+}
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: hsl(10, 80%, 40%);
+    color: hsl(0, 0%, 95%);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.5);
+}
+button:hover {
+    background-color: hsl(10, 80%, 35%);
+    transform: scale(1.05);
+}
+#output {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+.result-card {
+    background-color: hsl(220, 30%, 25%);
+    color: hsl(0, 0%, 95%);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.4);
+    width: 100%;
+}
+.result-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.matrix-table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+.matrix-table td {
+    border: 1px solid hsl(0, 0%, 60%);
+    padding: 5px 10px;
+}

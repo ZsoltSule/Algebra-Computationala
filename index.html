@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Select an exercise!</h1>
+
+    <select id="program">
+        <option value="">Select an exercise!</option>
+        <option value="1">Program 1</option>
+        <option value="4">Program 4</option>
+        <option value="3">Program 3</option>
+        <option value="4">Program 4</option>
+    </select>
+
+    <button id="run">Run the program</button>
+
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("run").addEventListener("click", () => {
+            const output = document.getElementById("output");
+            output.innerHTML = ''; // curăță output-ul înainte de a rula scriptul
+
+            const num = document.getElementById("program").value;
+            if (!num) {
+                alert("Select an exercise!");
+                return;
+            }
+
+            const oldScript = document.getElementById("program-script");
+            if (oldScript) oldScript.remove();
+
+            const script = document.createElement("script");
+            script.src = `exercises/program${num}.js`;
+            script.id = "program-script";
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
