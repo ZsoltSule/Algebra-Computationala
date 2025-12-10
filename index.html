@@ -13,8 +13,8 @@
         <option value="">Select an exercise!</option>
         <option value="1">Program 1</option>
         <option value="4">Program 4</option>
-        <option value="3">Program 3</option>
-        <option value="4">Program 4</option>
+        <option value="10">Program 10</option>
+        <option value="14">Program 14</option>
     </select>
 
     <button id="run">Run the program</button>
@@ -24,7 +24,7 @@
     <script>
         document.getElementById("run").addEventListener("click", () => {
             const output = document.getElementById("output");
-            output.innerHTML = ''; // curăță output-ul înainte de a rula scriptul
+            output.innerHTML = ''; 
 
             const num = document.getElementById("program").value;
             if (!num) {
