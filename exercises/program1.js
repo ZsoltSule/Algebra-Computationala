@@ -1,7 +1,7 @@
 /*
-    1) Verificați dacă inversa unei matrici triunghiulare este tot triunghiulară. Verificați dacă
-    produsul a două matrici triunghiulare este tot matrice triunghiulară. 
- */
+    1) Verificați dacă inversa unei matrici triunghiulare este tot triunghiulară. 
+    Verificați dacă produsul a două matrici triunghiulare este tot matrice triunghiulară. 
+*/
 
 function printMatrix(matrix, name) {
     const output = document.getElementById("output");
@@ -47,6 +47,22 @@ function isUpperTriangular(matrix) {
         }
     }
     return true;
+}
+
+function isLowerTriangular(matrix) {
+    const n = matrix.length;
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = i + 1; j < n; j++) {
+            if (matrix[i][j] !== 0) return false;
+        }
+    }
+    return true;
+}
+
+function matrixType(matrix) {
+    if (isUpperTriangular(matrix)) return "superioară";
+    if (isLowerTriangular(matrix)) return "inferioară";
+    return "nu este triunghiulară";
 }
 
 function inverseMatrix(matrix) {
@@ -103,11 +119,13 @@ printMatrix(B, "Matricea B");
 try {
     const A_inv = inverseMatrix(A.map(row => [...row]));
     printMatrix(A_inv, "Inversa lui A");
-    printText("Inversa lui A este triunghiulară? " + isUpperTriangular(A_inv));
+    printText("Inversa lui A este triunghiulară superioară? " + isUpperTriangular(A_inv));
+    printText("Inversa lui A este triunghiulară inferioară? " + isLowerTriangular(A_inv));
 } catch (err) {
     printText("Eroare: " + err);
 }
 
 const C = multiplyMatrices(A, B);
-printMatrix(C, "Produsul A * B");
-printText("Produsul A * B este triunghiular? " + isUpperTriangular(C));
+printMatrix(C, "Produsul A × B");
+printText("Produsul A × B este triunghiulară superioară? " + isUpperTriangular(C));
+printText("Produsul A × B este triunghiulară inferioară? " + isLowerTriangular(C));
