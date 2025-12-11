@@ -53,7 +53,6 @@ function gaussSolve(A, b) {
         }
         [M[i], M[maxRow]] = [M[maxRow], M[i]];
 
-        // Eliminare
         for (let k = i + 1; k < n; k++) {
             const factor = M[k][i] / M[i][i];
             for (let j = i; j <= n; j++) {
